@@ -10,15 +10,15 @@ class Employee extends Person{
     int id;
     double hour;
     double rate;
-    Employee(this.id, this.hour, this.rate):super(f,l);
+    Employee(this.id, String f, String l, this.hour, this.rate):super(f, l);
     double getSalary(){
         return hour*rate;
     }
     String toString(){
-        String report = id.toString()+",";
-        report += super.toString()+",";
-        report += hour.toString()+",";
-        report += rate.toString()+",";
+        String report = id.toString()+", ";
+        report += super.toString()+", ";
+        report += hour.toString()+", ";
+        report += rate.toString()+", ";
         report += getSalary().toString();
         return report;
     }
@@ -28,5 +28,5 @@ void main(){
     print(e.toString());
     e.fname = "Sterling";
     e.lname = "Lingstone";
-    
+    print(e.toString());
 }
