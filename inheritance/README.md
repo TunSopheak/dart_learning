@@ -150,9 +150,68 @@ class MyCustomButton extends StatelessWidget {
 
 ---
 
+## 5. ទស្សនាទាន "IS-A" និង "HAS-A" (IS-A vs HAS-A Relationship)
+
+នៅក្នុង OOP ដើម្បីសម្រេចចិត្តថា តើពេលណាគួរប្រើ Inheritance (`extends`) ហើយពេលណាគួរគ្រាន់តែប្រកាសជា Object ធម្មតា គេតែងតែផ្អែកលើទស្សនាទាន **IS-A** និង **HAS-A**។
+
+### ក. ទំនាក់ទំនង IS-A (Inheritance)
+
+* **អត្ថន័យ:** "A គឺជា B" ។ វាប្រាប់ពីទំនាក់ទំនងបែប Inherit ដែល Class មួយជារបស់ Class មួយទៀត។
+* **ការប្រើប្រាស់:** ប្រើប្រាស់ keyword `extends`។
+* **ឧទាហរណ៍:** `Dog` គឺជា `Animal` (Dog IS-A Animal)។ `Student` គឺជា `Person` (Student IS-A Person)។ `MyCustomButton` គឺជា `StatelessWidget`។
+
+### ខ. ទំនាក់ទំនង HAS-A (Composition / Aggregation)
+
+* **អត្ថន័យ:** "A មាន B" ។ វាប្រាប់ពីទំនាក់ទំនងដែល Class មួយ មាន Class មួយទៀតជាផ្នែក (Component) របស់វា។ យើងមិនប្រើ `extends` ទេ តែយើងប្រកាសវាជា Property (Field) ជំនួសវិញ។
+* **ការប្រើប្រាស់:** បង្កើត Object របស់ Class មួយដាក់ចូលក្នុង Class មួយទៀត។
+* **ឧទាហរណ៍:** `Car` មាន `Engine` (Car HAS-A Engine)។ ឡានមិនមែនជាម៉ាស៊ីនទេ តែឡានមានម៉ាស៊ីន។ `Person` មាន `Address`។
+
+**ឧទាហរណ៍កូដប្រៀបធៀប IS-A និង HAS-A៖**
+
+```dart
+// ==================== ទំនាក់ទំនង IS-A ====================
+class Animal {
+  void breathe() => print("ដកដង្ហើម...");
+}
+
+// Dog "គឺជា" Animal ដូច្នេះប្រើ extends
+class Dog extends Animal {} 
+
+
+// ==================== ទំនាក់ទំនង HAS-A ====================
+class Engine {
+  void startEngine() => print("ម៉ាស៊ីនកំពុងឆេះ...");
+}
+
+class Car {
+  // Car "មាន" Engine ដូច្នេះយើងមិនប្រើ extends ទេ 
+  // តែយើងប្រកាស Engine ជា Property នៅក្នុង Car (Composition)
+  Engine myEngine = Engine(); 
+
+  void drive() {
+    myEngine.startEngine(); // ប្រើប្រាស់សមត្ថភាពរបស់ Engine
+    print("ឡានកំពុងបរ...");
+  }
+}
+
+void main() {
+  // IS-A Usage
+  Dog myDog = Dog();
+  myDog.breathe(); 
+  
+  // HAS-A Usage
+  Car myCar = Car();
+  myCar.drive(); 
+}
+
+```
+
+---
+
 ## សេចក្ដីសន្និដ្ឋាន
 
-* ប្រើ **`extends`** ដើម្បីឱ្យ Class មួយស្នងលក្ខណៈពី Class មួយទៀត។
+* ប្រើ **`extends`** ដើម្បីឱ្យ Class មួយស្នងលក្ខណៈពី Class មួយទៀត (ទំនាក់ទំនងបែប **IS-A** )។
+* ប្រើ **Object ជា Property** នៅពេលដែល Class មួយគ្រាន់តែផ្ទុក ឬមាន Class មួយទៀត (ទំនាក់ទំនងបែប **HAS-A** )។
 * ប្រើ **`@override`** ដើម្បីកែប្រែ Method របស់ Parent។
 * ប្រើ **`super`** ដើម្បីហៅ Method ឬ Constructor របស់ Parent មកប្រើការ។
 * ក្នុង Dart, Class មួយអាច `extends` ពី Parent Class បាន**តែមួយគត់** (Single Inheritance)។
