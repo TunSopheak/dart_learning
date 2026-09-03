@@ -1,4 +1,4 @@
-មេរៀនស្តីពី **Object-Oriented Programming (OOP)** នៅក្នុង **Dart Programming** 
+ខ្ញុំបានកែសម្រួលមេរៀន **Object-Oriented Programming (OOP) នៅក្នុង Dart** 
 
 ---
 
@@ -60,7 +60,7 @@ void main() {
 
 # មេរៀនទី ៣៖ Inheritance (បន្តវេន)
 
-**Inheritance** អនុញ្ញាតឱ្យ Class កូន (Child Class) 继承 (បន្តវេន) Properties និង Methods មកពី Class មេ (Parent Class) ដើម្បីកាត់បន្ថយការសរសេរកូដជាន់គ្នា។
+**Inheritance** អនុញ្ញាតឱ្យ Class កូន (Child Class) បន្តវេន Properties និង Methods មកពី Class មេ (Parent Class) ដើម្បីកាត់បន្ថយการសរសេរកូដជាន់គ្នា។
 
 ```dart
 // Class មេ (Parent Class)
@@ -92,7 +92,7 @@ void main() {
 
 # មេរៀនទី ៤៖ Encapsulation (ការលាក់បាំងទិន្នន័យ)
 
-**Encapsulation** ប្រើសម្រាប់ការពារទិន្នន័យក្នុង Class កុំឱ្យកូដខាងក្រៅមកកែប្រែខុសប្រក្រតីដោយផ្ទាល់។ យើងប្រើសញ្ញាអണ്ടរស្តុប (`_`) នៅមុខឈ្មោះ Variable ដើម្បីធ្វើឱ្យវាជាប្រភេទ Private។
+**Encapsulation** ប្រើសម្រាប់ការពារទិន្នន័យក្នុង Class កុំឱ្យកូដខាងក្រៅមកកែប្រែខុសប្រក្រតីដោយផ្ទាល់។ យើងប្រើសញ្ញាអണ്ടរស្តុប (`_`) មុខឈ្មោះ Variable ដើម្បីធ្វើឱ្យវាជាប្រភេទ Private។
 
 ```dart
 class BankAccount {
